@@ -133,19 +133,40 @@
     </form>
     <div id="floating-card" class="hidden">
       <div class="card-content">
+        <img src="assets/icons/Info.svg" alt="Info Icon" />
         <p id="floating-card-message"></p>
       </div>
     </div>
     <script>
       const form = document.getElementById("subscription-form");
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
+      const card = document.getElementById("floating-card");
+      const card_message = document.getElementById("floating-card-message");
+
+      const submitForm = () => {
         const formData = new FormData(form);
         const userData = {};
         formData.forEach((value, key) => {
           userData[key] = value;
         });
         console.log(userData);
+        card_message.textContent = `Thank you, ${
+          userData.full_name || "User"
+        }! Your subscription is being processed.`;
+        showFloatingCard();
+        form.reset();
+      };
+      const showFloatingCard = (message) => {
+        card.classList.remove("hidden");
+        card.classList.add("visible");
+        setTimeout(() => {
+          card.classList.remove("visible");
+          card.classList.add("hidden");
+        }, 5000);
+      };
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        submitForm();
       });
     </script>
   </body>

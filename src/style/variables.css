@@ -6,5 +6,5 @@
   --main-purple: #753ee4;
   --main-purple-transparent: #753ee42a;
   --main-purple-light: color-mix(in srgb, var(--main-purple), white 15%);
-  --main-purple-dark: color-mix(in srgb, var(--main-purple), black 1%);
+  --main-purple-dark: color-mix(in srgb, var(--main-purple), black 10%);
 }
