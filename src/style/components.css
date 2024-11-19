@@ -166,3 +166,34 @@ input[type="email"]:focus-visible {
   outline: none;
   border-color: var(--main-purple);
 }
+
+#floating-card {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--color-background-light);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#floating-card .card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#floating-card.hidden {
+  display: none;
+}
+
+#floating-card.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}

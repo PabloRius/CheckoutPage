@@ -12,8 +12,7 @@
     <link rel="stylesheet" href="style/variables.css" />
   </head>
   <body>
-    <script src="index.js"></script>
-    <form action="post">
+    <form id="subscription-form">
       <main>
         <h1>
           <img src="assets/icons/Logo.svg" alt="Company Logo" /> Neuralite
@@ -24,8 +23,8 @@
         </p>
 
         <div class="inputGroup">
-          <label for="full_name"><span>Billed to</span></label
-          ><input
+          <label for="full_name"><span>Billed to</span></label>
+          <input
             type="text"
             name="full_name"
             id="full_name"
@@ -36,28 +35,42 @@
         <div class="inputGroup">
           <label>Payment Details</label>
           <div class="radioGroup">
-            <input type="radio" name="payment_type" id="payment_type_1" />
+            <input
+              type="radio"
+              name="payment_type"
+              id="payment_type_1"
+              value="Credit Card"
+            />
             <label for="payment_type_1">
               <img src="assets/icons/CreditCard.svg" alt="Credit Card Icon" />
               <span>Credit Card</span>
             </label>
-            <input type="radio" name="payment_type" id="payment_type_2" />
-            <label for="payment_type_2"
-              ><img src="assets/icons/Bank.svg" alt="Bank Icon" /><span
-                >Bank Transfer</span
-              >
+            <input
+              type="radio"
+              name="payment_type"
+              id="payment_type_2"
+              value="Bank Transfer"
+            />
+            <label for="payment_type_2">
+              <img src="assets/icons/Bank.svg" alt="Bank Icon" />
+              <span>Bank Transfer</span>
             </label>
-            <input type="radio" name="payment_type" id="payment_type_3" />
-            <label for="payment_type_3"
-              ><img src="assets/icons/Diamond.svg" alt="Diamond Icon" /><span
-                >Points</span
-              >
+            <input
+              type="radio"
+              name="payment_type"
+              id="payment_type_3"
+              value="Points"
+            />
+            <label for="payment_type_3">
+              <img src="assets/icons/Diamond.svg" alt="Diamond Icon" />
+              <span>Points</span>
             </label>
           </div>
         </div>
+
         <div class="inputGroup">
-          <label for="email"><span>Email address</span></label
-          ><input
+          <label for="email"><span>Email address</span></label>
+          <input
             type="email"
             name="email"
             id="email"
@@ -66,12 +79,12 @@
         </div>
         <div class="row">
           <div class="inputGroup">
-            <label for="country"><span>Country</span></label
-            ><input type="text" name="country" id="country" />
+            <label for="country"><span>Country</span></label>
+            <input type="text" name="country" id="country" />
           </div>
           <div class="inputGroup">
-            <label for="postal"><span>Postal Code</span></label
-            ><input type="text" name="postal" id="postal" placeholder="00270" />
+            <label for="postal"><span>Postal Code</span></label>
+            <input type="text" name="postal" id="postal" placeholder="00270" />
           </div>
         </div>
       </main>
@@ -80,31 +93,37 @@
           <h3>Starter Plan</h3>
           <div class="plans">
             <div>
-              <label for="plan1" class="radio-label"
-                ><input type="radio" name="plans" id="plan1" />
-                <div>
-                  <span>Pay Monthly</span><span>$20/Month/Member</span>
-                </div></label
-              >
+              <label for="plan1" class="radio-label">
+                <input
+                  type="radio"
+                  name="plans"
+                  id="plan1"
+                  value="Pay Monthly"
+                />
+                <div><span>Pay Monthly</span><span>$20/Month/Member</span></div>
+              </label>
             </div>
             <div>
-              <label for="plan2" class="radio-label"
-                ><input type="radio" name="plans" id="plan2" />
-                <div>
-                  <span>Pay Annual</span><span>$16/Month/Member</span>
-                </div></label
-              >
+              <label for="plan2" class="radio-label">
+                <input
+                  type="radio"
+                  name="plans"
+                  id="plan2"
+                  value="Pay Annual"
+                />
+                <div><span>Pay Annual</span><span>$16/Month/Member</span></div>
+              </label>
             </div>
           </div>
         </div>
         <hr />
         <footer>
           <div><span>Total</span><span>$20 / Month</span></div>
-          <span
-            ><img src="assets/icons/Lock.svg" alt="Lock Icon" />This environment
-            is for demonstration purposes only. Please refrain from entering any
-            actual sensitive data.</span
-          >
+          <span>
+            <img src="assets/icons/Lock.svg" alt="Lock Icon" />
+            This environment is for demonstration purposes only. Please refrain
+            from entering any actual sensitive data.
+          </span>
           <div>
             <input type="reset" value="Cancel" />
             <input type="submit" value="Subscribe" />
@@ -112,5 +131,22 @@
         </footer>
       </aside>
     </form>
+    <div id="floating-card" class="hidden">
+      <div class="card-content">
+        <p id="floating-card-message"></p>
+      </div>
+    </div>
+    <script>
+      const form = document.getElementById("subscription-form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const userData = {};
+        formData.forEach((value, key) => {
+          userData[key] = value;
+        });
+        console.log(userData);
+      });
+    </script>
   </body>
 </html>
