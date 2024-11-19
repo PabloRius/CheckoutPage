@@ -48,6 +48,12 @@ aside > .inputGroup {
   gap: 1.5rem;
 }
 
+aside > footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
 aside > footer > div {
   display: flex;
   flex-direction: row;
