@@ -29,6 +29,8 @@
             name="full_name"
             id="full_name"
             placeholder="Enter first & last name"
+            required
+            title="Please enter your full name"
           />
         </div>
 
@@ -40,6 +42,7 @@
               name="payment_type"
               id="payment_type_1"
               value="Credit Card"
+              required
             />
             <label for="payment_type_1">
               <img src="assets/icons/CreditCard.svg" alt="Credit Card Icon" />
@@ -50,6 +53,7 @@
               name="payment_type"
               id="payment_type_2"
               value="Bank Transfer"
+              required
             />
             <label for="payment_type_2">
               <img src="assets/icons/Bank.svg" alt="Bank Icon" />
@@ -60,6 +64,7 @@
               name="payment_type"
               id="payment_type_3"
               value="Points"
+              required
             />
             <label for="payment_type_3">
               <img src="assets/icons/Diamond.svg" alt="Diamond Icon" />
@@ -75,16 +80,32 @@
             name="email"
             id="email"
             placeholder="Enter email address"
+            required
+            title="Please enter a valid email address"
           />
         </div>
         <div class="row">
           <div class="inputGroup">
             <label for="country"><span>Country</span></label>
-            <input type="text" name="country" id="country" />
+            <input
+              type="text"
+              name="country"
+              id="country"
+              required
+              title="Please enter your country"
+            />
           </div>
           <div class="inputGroup">
             <label for="postal"><span>Postal Code</span></label>
-            <input type="text" name="postal" id="postal" placeholder="00270" />
+            <input
+              type="text"
+              name="postal"
+              id="postal"
+              placeholder="00270"
+              pattern="\d{5}"
+              required
+              title="Please enter a 5-digit postal code"
+            />
           </div>
         </div>
       </main>
@@ -99,6 +120,7 @@
                   name="plans"
                   id="plan1"
                   value="Pay Monthly"
+                  required
                 />
                 <div><span>Pay Monthly</span><span>$20/Month/Member</span></div>
               </label>
@@ -110,6 +132,7 @@
                   name="plans"
                   id="plan2"
                   value="Pay Annual"
+                  required
                 />
                 <div><span>Pay Annual</span><span>$16/Month/Member</span></div>
               </label>
