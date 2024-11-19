@@ -3,112 +3,186 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Subscription Checkout Page</title>
-    <link rel="stylesheet" href="style/reset.css" />
-    <link rel="stylesheet" href="style/variables.css" />
     <link rel="stylesheet" href="style/base.css" />
     <link rel="stylesheet" href="style/components.css" />
     <link rel="stylesheet" href="style/layout.css" />
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/variables.css" />
   </head>
   <body>
-    <header>
-      <h1>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="50"
-          viewBox="0 0 1024 1024"
-          class="icon"
-          role="img"
-          aria-label="Neuralite Logo"
-        >
-          <path
-            d="M625.6 516.8l19.2 81.6 104-38.4 4.8 14.4-110.4 40L560 824l-14.4-6.4 83.2-203.2-169.6-25.6 64 217.6c3.2 8-1.6 17.6-11.2 19.2s-17.6-1.6-19.2-11.2l-68.8-232-153.6-22.4 1.6-16 145.6 22.4-28.8-96-116.8 59.2-14.4-28.8 129.6-65.6L480 217.6 254.4 499.2l-12.8-9.6L480 190.4l9.6 6.4 27.2 11.2-96 227.2 177.6 41.6-64-268.8 16-3.2 67.2 278.4 136 32c8 1.6 14.4 11.2 11.2 19.2-1.6 8-11.2 14.4-19.2 11.2l-120-28.8z"
-            fill="#a273ff"
-          />
-        </svg>
-        Neuralite
-      </h1>
-    </header>
-    <main>
-      <section aria-labelledby="upgrade-header">
-        <h2 id="upgrade-header">Upgrade to Plus</h2>
+    <script src="index.js"></script>
+    <form action="post">
+      <main>
+        <h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            viewBox="0 0 1024 1024"
+            class="icon"
+            version="1.1"
+          >
+            <path
+              d="M625.6 516.8l19.2 81.6 104-38.4 4.8 14.4-110.4 40L560 824l-14.4-6.4 83.2-203.2-169.6-25.6 64 217.6c3.2 8-1.6 17.6-11.2 19.2s-17.6-1.6-19.2-11.2l-68.8-232-153.6-22.4 1.6-16 145.6 22.4-28.8-96-116.8 59.2-14.4-28.8 129.6-65.6L480 217.6 254.4 499.2l-12.8-9.6L480 190.4l9.6 6.4 27.2 11.2-96 227.2 177.6 41.6-64-268.8 16-3.2 67.2 278.4 136 32c8 1.6 14.4 11.2 11.2 19.2-1.6 8-11.2 14.4-19.2 11.2l-120-28.8zM608 512l-185.6-43.2 30.4 102.4 176 25.6L608 512z m-46.4-313.6l12.8-9.6L784 484.8l-12.8 9.6-209.6-296zM768 588.8l12.8 9.6-201.6 240-12.8-9.6 201.6-240z m-278.4 240l-11.2 11.2-232-243.2 11.2-11.2 232 243.2z"
+              fill="#a273ff"
+            />
+            <path
+              d="M400 448m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z"
+              fill="#753ee4"
+            />
+            <path
+              d="M640 608m-56 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0Z"
+              fill="#753ee4"
+            />
+            <path
+              d="M208 624c-44.8 0-80-35.2-80-80s35.2-80 80-80 80 35.2 80 80-35.2 80-80 80z m0-32c27.2 0 48-20.8 48-48s-20.8-48-48-48-48 20.8-48 48 20.8 48 48 48zM528 960c-44.8 0-80-35.2-80-80s35.2-80 80-80 80 35.2 80 80-35.2 80-80 80z m0-32c27.2 0 48-20.8 48-48s-20.8-48-48-48-48 20.8-48 48 20.8 48 48 48zM528 224c-44.8 0-80-35.2-80-80s35.2-80 80-80 80 35.2 80 80-35.2 80-80 80z m0-32c27.2 0 48-20.8 48-48s-20.8-48-48-48-48 20.8-48 48 20.8 48 48 48zM816 624c-44.8 0-80-35.2-80-80s35.2-80 80-80 80 35.2 80 80-35.2 80-80 80z m0-32c27.2 0 48-20.8 48-48s-20.8-48-48-48-48 20.8-48 48 20.8 48 48 48z"
+              fill="#753ee4"
+            /></svg
+          >Neuralite
+        </h1>
+        <h2>Upgrade to Plus</h2>
         <p>
-          Upgrade today and take your AI-powered productivity to the next level.
+          Upgrade today and take your AI-Powered productivity to the next level
         </p>
 
-        <form action="post" id="subscription-form">
-          <fieldset>
-            <legend>Billed to</legend>
-            <label for="full_name">Full Name</label>
-            <input
-              type="text"
-              name="full_name"
-              id="full_name"
-              placeholder="Enter first & last name"
-              aria-required="true"
-            />
-          </fieldset>
+        <div class="inputGroup">
+          <label for="full_name"><span>Billed to</span></label
+          ><input
+            type="text"
+            name="full_name"
+            id="full_name"
+            placeholder="Enter first & last name"
+          />
+        </div>
 
-          <fieldset>
-            <legend>Payment Details</legend>
-            <div>
-              <input type="radio" name="payment_type" id="credit_card" />
-              <label for="credit_card">Credit Card</label>
-            </div>
-            <div>
-              <input type="radio" name="payment_type" id="bank_transfer" />
-              <label for="bank_transfer">Bank Transfer</label>
-            </div>
-            <div>
-              <input type="radio" name="payment_type" id="points" />
-              <label for="points">Points</label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Contact Information</legend>
-            <label for="email">Email Address</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter email address"
-              aria-required="true"
-            />
-            <div class="row">
-              <label for="country">Country</label>
-              <input type="text" name="country" id="country" />
-              <label for="postal">Postal Code</label>
-              <input
-                type="text"
-                name="postal"
-                id="postal"
-                placeholder="00270"
-              />
-            </div>
-          </fieldset>
-
-          <footer>
-            <input type="reset" value="Cancel" />
-            <input type="submit" value="Subscribe" />
-          </footer>
-        </form>
-      </section>
+        <div class="inputGroup">
+          <label>Payment Details</label>
+          <div class="radioGroup">
+            <input type="radio" name="payment_type" id="payment_type_1" />
+            <label for="payment_type_1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 0.6 0.6"
+                fill="none"
+              >
+                <path
+                  d="M0.075 0.225h0.45M0.175 0.375h0.05m-0.07 0.1h0.29c0.028 0 0.042 0 0.053 -0.005a0.05 0.05 0 0 0 0.022 -0.022C0.525 0.437 0.525 0.423 0.525 0.395V0.205c0 -0.028 0 -0.042 -0.005 -0.053a0.05 0.05 0 0 0 -0.022 -0.022C0.487 0.125 0.473 0.125 0.445 0.125H0.155c-0.028 0 -0.042 0 -0.053 0.005a0.05 0.05 0 0 0 -0.022 0.022C0.075 0.163 0.075 0.177 0.075 0.205v0.19c0 0.028 0 0.042 0.005 0.053a0.05 0.05 0 0 0 0.022 0.022C0.113 0.475 0.127 0.475 0.155 0.475"
+                  stroke="#000"
+                  stroke-width="0.05"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Credit Card</span>
+            </label>
+            <input type="radio" name="payment_type" id="payment_type_2" />
+            <label for="payment_type_2"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 0.6 0.6"
+                fill="none"
+              >
+                <path
+                  d="M.075.525h.45M.1.45h.4m-.35 0V.325m.1.125V.325m.1.125V.325m.1.125V.325M.525.25.353.097C.334.08.325.072.314.069a.05.05 0 0 0-.029 0C.274.072.265.081.246.097L.075.25z"
+                  stroke="#000"
+                  stroke-width=".05"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+              ><span>Bank Transfer</span>
+            </label>
+            <input type="radio" name="payment_type" id="payment_type_3" />
+            <label for="payment_type_3"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 0.6 0.6"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M.156.025a.08.08 0 0 0-.067.041l-.06.12a.08.08 0 0 0 .006.078l.204.282a.075.075 0 0 0 .122 0L.565.264A.08.08 0 0 0 .571.186l-.06-.12A.08.08 0 0 0 .444.025zM.134.089A.03.03 0 0 1 .156.075h.061L.181.2H.078zM.233.2.269.075h.062L.367.2zm.133.05H.234L.3.465zM.348.478.418.25h.095zM.419.2.383.075h.061a.03.03 0 0 1 .022.014L.522.2zM.087.25h.094l.07.228z"
+                  fill="#0F0F0F"
+                /></svg
+              ><span>Points</span>
+            </label>
+          </div>
+        </div>
+        <div class="inputGroup">
+          <label for="email"><span>Email address</span></label
+          ><input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter email address"
+          />
+        </div>
+        <div class="row">
+          <div class="inputGroup">
+            <label for="country"><span>Country</span></label
+            ><input type="text" name="country" id="country" />
+          </div>
+          <div class="inputGroup">
+            <label for="postal"><span>Postal Code</span></label
+            ><input type="text" name="postal" id="postal" placeholder="00270" />
+          </div>
+        </div>
+        <footer>
+          <input type="reset" value="Cancel" />
+          <input type="submit" value="Subscribe" />
+        </footer>
+      </main>
       <aside>
-        <fieldset>
-          <legend>Starter Plan</legend>
-          <label>
-            <input type="radio" name="plan" value="monthly" />
-            <span>Pay Monthly - $20/Month/Member</span>
-          </label>
-          <label>
-            <input type="radio" name="plan" value="yearly" />
-            <span>Pay Yearly - $200/Year</span>
-          </label>
-        </fieldset>
+        <div class="inputGroup">
+          <h3>Starter Plan</h3>
+          <div class="plans">
+            <div>
+              <label for="plan1" class="radio-label"
+                ><input type="radio" name="plans" id="plan1" />
+                <div>
+                  <span>Pay Monthly</span><span>$20/Month/Member</span>
+                </div></label
+              >
+            </div>
+            <div>
+              <label for="plan2" class="radio-label"
+                ><input type="radio" name="plans" id="plan2" />
+                <div>
+                  <span>Pay Annual</span><span>$16/Month/Member</span>
+                </div></label
+              >
+            </div>
+          </div>
+        </div>
+        <hr />
+        <footer>
+          <div><span>Total</span><span>$20 / Month</span></div>
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10"
+              viewBox="0 0 0.45 0.45"
+              fill="none"
+            >
+              <path
+                d="M.225.272v.037M.131.188h.154l.034.001m-.188 0L.105.195A.06.06 0 0 0 .08.22C.075.23.075.246.075.278v.026c0 .032 0 .047.006.059a.06.06 0 0 0 .025.025c.012.006.028.006.059.006h.12c.032 0 .047 0 .059-.006A.06.06 0 0 0 .369.363C.375.351.375.335.375.304V.278c0-.032 0-.047-.006-.059A.06.06 0 0 0 .344.194L.318.188m-.188 0V.15a.094.094 0 0 1 .188 0v.038"
+                stroke="#000"
+                stroke-width=".037"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              /></svg
+            >This environment is for demonstration purposes only. Please refrain
+            from entering any actual sensitive data.</span
+          >
+        </footer>
       </aside>
-    </main>
-    <script src="index.js"></script>
+    </form>
   </body>
 </html>
