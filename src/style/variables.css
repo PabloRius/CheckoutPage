@@ -1,0 +1,9 @@
+:root {
+  --main-gray: #f0f4f7;
+  --main-gray-dark: color-mix(in srgb, var(--main-gray), black 1%);
+  --main-gray-light: color-mix(in srgb, var(--main-gray), white 50%);
+  --main-purple: #753ee4;
+  --main-purple-transparent: #753ee42a;
+  --main-purple-light: color-mix(in srgb, var(--main-purple), white 1%);
+  --main-purple-dark: color-mix(in srgb, var(--main-purple), black 1%);
+}
